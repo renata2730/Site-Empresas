@@ -109,3 +109,11 @@
     </script>
 </body>
 </html>
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /solicitacoes/{docId} {
+      allow read, write: if true;
+    }
+  }
+}
